@@ -12,7 +12,6 @@ class Cache
       'scheme' => 'tcp',
       'host' => $_ENV['REDIS_HOST'],
       'port' => $_ENV['REDIS_PORT'],
-      'username' => $_ENV['REDIS_USERNAME'],
       'password' => $_ENV['REDIS_PASSWORD'],
       'database' => $_ENV['REDIS_CACHE_DB']
     ]);

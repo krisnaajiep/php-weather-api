@@ -6,7 +6,7 @@ use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
-$dotenv->required(['API_BASE_URL', 'API_KEY', 'REDIS_HOST', 'REDIS_USERNAME', 'REDIS_PASSWORD', 'REDIS_PORT', 'REDIS_CACHE_DB']);
+$dotenv->required(['API_BASE_URL', 'API_KEY', 'REDIS_HOST', 'REDIS_PASSWORD', 'REDIS_PORT', 'REDIS_CACHE_DB']);
 
 spl_autoload_register(function ($class) {
   include 'classes/' . $class . '.php';
