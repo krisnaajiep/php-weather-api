@@ -8,7 +8,9 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 $dotenv->required(['API_KEY', 'REDIS_HOST', 'REDIS_USERNAME', 'REDIS_PASSWORD', 'REDIS_PORT', 'REDIS_CACHE_DB']);
 
-require_once 'autoload.php';
+spl_autoload_register(static function ($class) {
+  include 'classes/' . $class . '.php';
+});
 
 $weather = new Weather();
 
