@@ -1,6 +1,6 @@
 # PHP Weather API
 
-A PHP-based Weather API that fetches and returns weather data from [Visual Crossing's API](https://www.visualcrossing.com/weather-api). Inspired by [roadmap.sh](https://roadmap.sh/projects/weather-api-wrapper-service).
+A PHP-based Weather API that fetches and returns weather data from [Visual Crossing's API](https://www.visualcrossing.com/weather-api) uses [predis](https://github.com/predis/predis) for Redis cache and [phpdotenv](https://github.com/vlucas/phpdotenv) for loads environment variables. This project inspired by [roadmap.sh](https://roadmap.sh/projects/weather-api-wrapper-service).
 
 ## **Getting started guide**
 
