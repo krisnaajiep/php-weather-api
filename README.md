@@ -31,7 +31,7 @@ To start using the Expense Tracker API, you need to -
 
    ```
    API_BASE_URL="https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"
-   API_KEY="FQ6A4QTDNJRP348RQXG5RT325"
+   API_KEY=""
 
    REDIS_HOST=127.0.0.1
    REDIS_PASSWORD=null
