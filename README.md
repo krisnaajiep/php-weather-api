@@ -39,14 +39,18 @@ To start using the Expense Tracker API, you need to -
    REDIS_CACHE_DB=0
    ```
 
-5. Run the local server.
+5. Run the PHP built-in server.
 
    ```bash
    php -S localhost:8000
 
    ```
 
-6. Access the endpoint with location query parameter. `http://localhost:8000/?location=YOUR_LOCATION`.
+6. Access the endpoint with location query parameter.
+   Example:
+   ```
+   http://localhost:8000/?location=jakarta
+   ```
 
 ### **Need some help?**
 
