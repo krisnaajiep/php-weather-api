@@ -47,7 +47,9 @@ To start using the Expense Tracker API, you need to -
    ```
 
 6. Access the endpoint with location query parameter.
+
    Example:
+
    ```
    http://localhost:8000/?location=jakarta
    ```
