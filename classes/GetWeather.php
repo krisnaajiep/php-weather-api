@@ -4,6 +4,11 @@ class GetWeather
 {
   public function __invoke(string $url): string|bool
   {
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: GET");
+    header("Access-Control-Allow-Headers: Content-Type");
+    header('Content-type: application/json');
+
     $weatherCache = Cache::get($_GET['location']);
 
     if (!is_null($weatherCache)) {
@@ -28,8 +33,6 @@ class GetWeather
     }
 
     curl_close($ch);
-
-    header('Content-type: application/json');
 
     return $response;
   }
