@@ -4,7 +4,9 @@ function weather(string $location): string|true
 {
   header('Content-type: application/json');
 
-  $url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/$location?key=FQ6A4QTDNJRP348RQXG5RT325&include=days";
+  $base_url = $_ENV['API_BASE_URL'];
+  $key = $_ENV['API_KEY'];
+  $url = "$base_url$location?key=$key&include=days";
 
   $ch = curl_init($url);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
