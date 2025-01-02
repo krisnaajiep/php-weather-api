@@ -18,4 +18,10 @@ if (!$executed) {
   exit;
 }
 
+if (!isset($_GET['location'])) {
+  header('HTTP/1.1 400');
+  echo 'Bad API Request:A location must be specified';
+  exit;
+}
+
 echo weather($_GET['location']);
