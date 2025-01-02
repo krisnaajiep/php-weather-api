@@ -13,6 +13,8 @@ function weather(string $location): string|true
   $response = curl_exec($ch);
 
   if (!$response) $response = 'Curl error: ' . curl_error($ch);
+  $response_code = intval(curl_getinfo($ch, CURLINFO_RESPONSE_CODE));
+  if ($response_code !== 200) header("HTTP/1.1 $response_code");
 
   curl_close($ch);
 
