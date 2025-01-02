@@ -28,4 +28,16 @@ class Cache
     self::init();
     return self::$client->get($key);
   }
+
+  public static function incr(string $key): int
+  {
+    self::init();
+    return self::$client->incr($key);
+  }
+
+  public static function expire(string $key, int $seconds, string $expireOption = ''): int
+  {
+    self::init();
+    return self::$client->expire($key, $seconds, $expireOption);
+  }
 }
