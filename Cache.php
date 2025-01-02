@@ -21,7 +21,7 @@ class Cache
    *
    * @return void
    */
-  public static function init()
+  private static function init()
   {
     self::$client = new Client([
       'scheme' => 'tcp', // Connection scheme (TCP protocol)
