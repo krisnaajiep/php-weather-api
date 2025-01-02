@@ -4,6 +4,13 @@ function weather(string $location): string|true
 {
   header('Content-type: application/json');
 
+  $cache = Cache::get($location);
+
+  if (!is_null($cache)) {
+    header('Content-type: application/json');
+    return $cache;
+  }
+
   $base_url = $_ENV['API_BASE_URL'];
   $key = $_ENV['API_KEY'];
   $url = "$base_url$location?key=$key&include=days";
@@ -14,7 +21,11 @@ function weather(string $location): string|true
 
   if (!$response) $response = 'Curl error: ' . curl_error($ch);
   $response_code = intval(curl_getinfo($ch, CURLINFO_RESPONSE_CODE));
-  if ($response_code !== 200) header("HTTP/1.1 $response_code");
+  if ($response_code !== 200) {
+    header("HTTP/1.1 $response_code");
+  } else {
+    Cache::set($location, $response);
+  }
 
   curl_close($ch);
 
